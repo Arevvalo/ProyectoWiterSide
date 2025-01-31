@@ -1,0 +1,596 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-01-31T21:49:53.4472924"><title>⚙️ JavaScript | ProyectoWriterSide</title><script type="application/json" id="virtual-toc-data">[{"id":"loginregistro","level":0,"title":"loginRegistro","anchor":"#loginregistro"},{"id":"carritocompra","level":0,"title":"carritoCompra","anchor":"#carritocompra"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><link href="static/custom.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="⚙️ JavaScript | ProyectoWriterSide"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="ProyectoWriterSide Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/js.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="⚙️ JavaScript | ProyectoWriterSide"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/js.html#webpage",
+    "url": "writerside-documentation/js.html",
+    "name": "⚙️ JavaScript | ProyectoWriterSide",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "ProyectoWriterSide Help"
+}</script><!-- End Schema.org --></head><body data-id="JS" data-main-title="⚙️ JavaScript" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="estructura.md|🏗️ Estructura del Proyecto"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>ProyectoWriterSide  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="JS" id="JS.md">⚙️ JavaScript</h1><section class="chapter"><h2 id="loginregistro" data-toc="loginregistro">loginRegistro</h2><div class="code-block" data-lang="javascript">
+
+//Vamos a crear las cookies
+window.onload=iniciar;
+
+let arrayUsuarios = new Array();
+let arrayPassword = new Array();
+
+//MiniBaseDatos con 3 usuarios
+arrayUsuarios[0]=&quot;usuario1&quot;;
+arrayPassword[0]=&quot;Usuario1&quot;;
+
+arrayUsuarios[1]=&quot;usuario2&quot;;
+arrayPassword[1]=&quot;Usuario2&quot;;
+
+arrayUsuarios[2]=&quot;usuario3&quot;;
+arrayPassword[2]=&quot;Usuario3&quot;;
+
+
+
+function iniciar(){
+    let path = window.location.pathname;//comprobar pag, asi evitamos errores y centramos el focus de la pagina para usar el script q deseemos
+    if(path.includes(&quot;index.html&quot;)){
+        document.getElementById(&quot;iniciarSesion&quot;).onclick=loginUsuario;
+    }
+    if(path.includes(&quot;registro.html&quot;)){
+        document.getElementById(&quot;registrarUsuario&quot;).onclick=validarDatosUsuario;
+    }
+}
+
+
+//FUNCION PARA EL REGISTRO
+function validarDatosUsuario(){
+    let registroValido=true;
+    let nuevoUsuario;
+    let contraseniaNuevoUsuario;
+
+    //NOMBRE
+    let expresion = /^[A-Za-z\s]+$/;
+    let validarNombreCompleto= document.getElementById(&quot;nombreCompleto&quot;).value;
+    if (expresion.test(validarNombreCompleto)){               
+        // alert(&quot;Formato CORRECTO nombre&quot;);
+    }else{
+        alert(&quot;Formato invalido de nombre&quot;);
+        registroValido=false;
+    }
+
+    //CORREO
+    expresion = /^[a-z,\.]*[@][a-z]*[\.][a-z]{2,3}/;  //le he añadido el punto escapado alante 
+    let validarCorreo = document.getElementById(&quot;email&quot;).value; 
+    
+    if (expresion.test(validarCorreo)){               
+        // alert(&quot;Formato CORRECTO email&quot;);
+    }else{
+        alert(&quot;Formato invalido de email&quot;);
+        registroValido=false;
+    }
+
+    //NUMERO TELEFONO
+    expresion = /^[6-7-9]\d{8}$/;  
+    let validarTelefono = document.getElementById(&quot;numeroTelefono&quot;).value; 
+
+    if (expresion.test(validarTelefono)){               
+        // alert(&quot;Formato CORRECTO tfno&quot;);
+    }else{
+        alert(&quot;Formato invalido de numero de Telefono&quot;);
+        registroValido=false;
+    }
+
+    //USUARIO 
+    let validarNombreUsuario = document.getElementById(&quot;usuarioRegistro&quot;).value; 
+    let usuarioExiste=false;
+
+    if(validarNombreUsuario!=&quot;&quot; ){
+        // alert(&quot;Buscando si el nombre de usuario ya existe..&quot;);    
+        
+        for(let i=0; i&lt;arrayUsuarios.length;i++){//Vamos a buscar el usuario introducido en el array de datos 
+            let buscarUsuario=arrayUsuarios[i];//Variable usada en solo en el bucle
+            //Si encuentra al usuario hace...
+            if(validarNombreUsuario===buscarUsuario){
+                usuarioExiste=true;
+                alert(&quot;Este nombre de usuario ya esta siendo utilizado&quot;);
+                registroValido=false;//no seria valido porque no puede registrarse dos veces el mismo usuario
+                break;
+            }      
+        }
+        if(usuarioExiste==false){
+            // alert(&quot;Nombre de usuario VALIDO&quot;)
+        }
+
+    }else{
+        alert(&quot;la casilla de nombre de usuario debe ser rellenada&quot;);
+        registroValido=false;
+    }
+
+    //CONTRASEÑA (Entender ExpresionRegular)
+    expresion = /^(?=.*[A-Z])(?=.*[0-9]).{8,}$/; //A esto se le llama BUSQUEDA ANTICIPADA POSITIVA 
+    let validarContrasenia = document.getElementById(&quot;passwordRegistro&quot;).value; 
+
+    if (expresion.test(validarContrasenia)){               
+        // alert(&quot;Formato CORRECTO contraseña&quot;);
+        
+    }else{
+        alert(&quot;Formato invalido de contraseña&quot;);
+        registroValido=false;
+    }
+
+    //CONTRASEÑA CONFIRMAR
+    let contraseniaRepetida =document.getElementById(&quot;confirmarPassword&quot;).value; 
+    if(contraseniaRepetida ===validarContrasenia &amp;&amp; contraseniaRepetida !==&quot;&quot;){
+        // alert(&quot;Contraseña confirmada&quot;);
+    }else{
+        alert(&quot;Las contraseñas no son iguales&quot;);
+    }
+
+    if(registroValido==true){
+
+        alert(&quot;REGISTRANDO USUARIO&quot;);
+
+        nuevoUsuario=document.getElementById(&quot;usuarioRegistro&quot;).value;
+        contraseniaNuevoUsuario=document.getElementById(&quot;passwordRegistro&quot;).value;
+        // alert(&quot;usuario: &quot;+nuevoUsuario+&quot;contraseña: &quot;+contraseniaNuevoUsuario)
+        
+        let fechaExpiracion = new Date();
+        fechaExpiracion.setTime(fechaExpiracion.getTime() + (7 * 24 * 60 * 60 * 1000));
+
+
+        document.cookie = &quot;nuevoUsuario=&quot; + nuevoUsuario + &quot;;expires=&quot; + fechaExpiracion.toUTCString() + &quot;;path=/&quot;;
+        document.cookie = &quot;passNueva=&quot; + contraseniaNuevoUsuario + &quot;;expires=&quot; + fechaExpiracion.toUTCString() + &quot;;path=/&quot;;
+        window.open(&quot;../index.html&quot;,&quot;_blank&quot;);
+ 
+
+    }else{
+        alert(&quot;EL USUARIO NO HA PODIDO SER REGISTRADO&quot;);
+    }
+
+}
+
+//Funcion usada para loguearte en la pagina WEB (falta poder loguear un usuario registrado)
+function loginUsuario(){
+    let buscarRegistro = document.cookie.split(&quot;;&quot;);
+    let nuevoUsuario;
+    let contraseniaNuevoUsuario; // Asegúrate de usar esta misma variable
+
+for (let i = 0; i &lt; buscarRegistro.length; i++) {
+    let cookie = buscarRegistro[i].trim();
+
+    if (cookie.indexOf(&quot;nuevoUsuario=&quot;) === 0) {
+        let partes = cookie.split(&quot;=&quot;); 
+        nuevoUsuario = partes[1]; 
+    }
+
+    // Verificar si la cookie contiene &quot;passNueva&quot;
+    if (cookie.indexOf(&quot;passNueva=&quot;) === 0) {
+        let partes = cookie.split(&quot;=&quot;); // Divide en la parte antes y después del &quot;=&quot;
+        contraseniaNuevoUsuario = partes[1]; // Obtiene la parte después del &quot;=&quot;
+    }
+}
+
+
+// Los datos obtenidos de las cookies los mandamos a los arrays
+arrayUsuarios.push(nuevoUsuario);
+arrayPassword.push(contraseniaNuevoUsuario);
+
+
+    let usuarioLogin = document.getElementById(&quot;usuarioLogin&quot;).value;
+    let contraseniaLogin = document.getElementById(&quot;passwordLogin&quot;).value;
+
+    let contraseniaCorrecta=false;//True si la contraseña introducida esta en la pos del usuario en el array de Passwd
+    let usuarioExiste=false;
+    
+    let posUsuarioExiste;
+    
+    //Comprobacion usuario
+    for(let i=0; i&lt;arrayUsuarios.length;i++){
+        let buscarUsuario=arrayUsuarios[i];
+        //Si encuentra al usuario hace...
+        if(usuarioLogin===buscarUsuario){
+            usuarioExiste=true;
+            posUsuarioExiste=i;
+            break;
+        }      
+    }
+    //Comprobacion contraseña
+    if(usuarioExiste){
+        if(contraseniaLogin===arrayPassword[posUsuarioExiste]){
+            contraseniaCorrecta=true;
+        }else{
+            alert(&quot;La contraseña no es la correcta&quot;);
+        }
+
+    }else{
+        alert(&quot;El usuario no existe debes registrarte antes de loguearte&quot;);
+    }
+    //Abrir paginaPrincipal de la Tienda
+    if(usuarioExiste &amp;&amp; contraseniaCorrecta){
+        document.cookie=&quot;Usuario=&quot;+usuarioLogin;
+        document.cookie=&quot;Password=&quot;+contraseniaLogin;
+        window.open(&quot;./HTML/tiendaPrincipal.html&quot;,&quot;_blank&quot;);       
+    }
+
+}
+
+</div></section><section class="chapter"><h2 id="carritocompra" data-toc="carritocompra">carritoCompra</h2><div class="code-block" data-lang="javascript">
+
+
+window.onload=iniciar;
+
+
+let arrayUsuarios = new Array();
+let arrayPassword = new Array();
+
+//MiniBaseDatos con 3 usuarios
+arrayUsuarios[0]=&quot;usuario1&quot;;
+arrayPassword[0]=&quot;Usuario1&quot;;
+
+arrayUsuarios[1]=&quot;usuario2&quot;;
+arrayPassword[1]=&quot;Usuario2&quot;;
+
+arrayUsuarios[2]=&quot;usuario3&quot;;
+arrayPassword[2]=&quot;Usuario3&quot;;
+
+function iniciar(){  
+    let path = window.location.pathname;
+    if(path.includes(&quot;tiendaPrincipal.html&quot;)){
+        saludo();//Bienvenido, usuario
+        cerrarSesion();//Cerrar Sesion
+        carritoCompra();//DESPLEGABLE ABRIR Y CERRAR CESTA 
+        redesCurioso();//Acceso Instagram
+
+        //añadir Productos al Carrito
+        document.getElementById(&quot;añadirP1&quot;).onclick = () =&gt; añadirProductoCarrito('P1');
+        document.getElementById(&quot;añadirP2&quot;).onclick = () =&gt; añadirProductoCarrito('P2');
+        document.getElementById(&quot;añadirP3&quot;).onclick = () =&gt; añadirProductoCarrito('P3');
+        document.getElementById(&quot;añadirP4&quot;).onclick = () =&gt; añadirProductoCarrito('P4');
+        document.getElementById(&quot;añadirP5&quot;).onclick = () =&gt; añadirProductoCarrito('P5');
+        document.getElementById(&quot;añadirP6&quot;).onclick = () =&gt; añadirProductoCarrito('P6');
+        document.getElementById(&quot;añadirP7&quot;).onclick = () =&gt; añadirProductoCarrito('P7');
+        document.getElementById(&quot;añadirP8&quot;).onclick = () =&gt; añadirProductoCarrito('P8');
+        
+        // Sumar Producto
+        document.getElementById(&quot;SumarP1&quot;).onclick = () =&gt; sumarProducto('P1');
+        document.getElementById(&quot;SumarP2&quot;).onclick = () =&gt; sumarProducto('P2');
+        document.getElementById(&quot;SumarP3&quot;).onclick = () =&gt; sumarProducto('P3');
+        document.getElementById(&quot;SumarP4&quot;).onclick = () =&gt; sumarProducto('P4');
+        document.getElementById(&quot;SumarP5&quot;).onclick = () =&gt; sumarProducto('P5');
+        document.getElementById(&quot;SumarP6&quot;).onclick = () =&gt; sumarProducto('P6');
+        document.getElementById(&quot;SumarP7&quot;).onclick = () =&gt; sumarProducto('P7');
+        document.getElementById(&quot;SumarP8&quot;).onclick = () =&gt; sumarProducto('P8');
+
+        // Restar Producto
+        document.getElementById(&quot;RestarP1&quot;).onclick = () =&gt; restarProducto('P1');
+        document.getElementById(&quot;RestarP2&quot;).onclick = () =&gt; restarProducto('P2');
+        document.getElementById(&quot;RestarP3&quot;).onclick = () =&gt; restarProducto('P3');
+        document.getElementById(&quot;RestarP4&quot;).onclick = () =&gt; restarProducto('P4');
+        document.getElementById(&quot;RestarP5&quot;).onclick = () =&gt; restarProducto('P5');
+        document.getElementById(&quot;RestarP6&quot;).onclick = () =&gt; restarProducto('P6');
+        document.getElementById(&quot;RestarP7&quot;).onclick = () =&gt; restarProducto('P7');
+        document.getElementById(&quot;RestarP8&quot;).onclick = () =&gt; restarProducto('P8');
+    
+        //Borrar Producto
+        document.querySelector(&quot;#eliminarProducto1&quot;).onclick = () =&gt; eliminarProducto('P1');
+        document.querySelector(&quot;#eliminarProducto2&quot;).onclick = () =&gt; eliminarProducto('P2');
+        document.querySelector(&quot;#eliminarProducto3&quot;).onclick = () =&gt; eliminarProducto('P3');
+        document.querySelector(&quot;#eliminarProducto4&quot;).onclick = () =&gt; eliminarProducto('P4');
+        document.querySelector(&quot;#eliminarProducto5&quot;).onclick = () =&gt; eliminarProducto('P5');
+        document.querySelector(&quot;#eliminarProducto6&quot;).onclick = () =&gt; eliminarProducto('P6');
+        document.querySelector(&quot;#eliminarProducto7&quot;).onclick = () =&gt; eliminarProducto('P7');
+        document.querySelector(&quot;#eliminarProducto8&quot;).onclick = () =&gt; eliminarProducto('P8');
+        
+        //Tramitar Compra
+        document.getElementById(&quot;tramitarPedido&quot;).onclick = () =&gt; tramitarCompra();
+
+
+
+    }
+}
+    
+
+
+//Funcion para colocar nombreUsuario en el Header
+function saludo(){
+    let buscarRegistro = document.cookie.split(&quot;;&quot;); 
+    let nuevoUsuario;
+    let contraseniaNuevoUsuario; 
+    
+    for (let i = 0; i &lt; buscarRegistro.length; i++) {
+        let cookie = buscarRegistro[i].trim();
+    
+        // Verificar si la cookie contiene &quot;Usuario=&quot;
+        if (cookie.indexOf(&quot;Usuario=&quot;) === 0) {
+            let partes = cookie.split(&quot;=&quot;); // Divide en la parte antes y después del &quot;=&quot;
+            nuevoUsuario = partes[1]; // Obtiene la parte después del &quot;=&quot;
+        }
+    
+        // Verificar si la cookie contiene &quot;Password=&quot;
+        if (cookie.indexOf(&quot;Password=&quot;) === 0) {
+            let partes = cookie.split(&quot;=&quot;); // Divide en la parte antes y después del &quot;=&quot;
+            contraseniaNuevoUsuario = partes[1]; // Obtiene la parte después del &quot;=&quot;
+        }
+    }
+
+    arrayUsuarios.push(nuevoUsuario);
+    arrayPassword.push(contraseniaNuevoUsuario);
+
+    //sacamos las cookies
+    let infoUsuario=document.cookie.split(';');
+    //alert(&quot;COOKIES: &quot; + infoUsuario.join(&quot;, &quot;));
+   
+    //Voy a obtener de las cookies el nombre de usuario para ponerlo donde quiero.
+    let nombreUsuario;
+    for (let i = 0; i &lt; infoUsuario.length; i++) {
+        let cookie = infoUsuario[i].trim(); 
+        if (cookie.indexOf(&quot;Usuario=&quot;) === 0) { // Verifica si la cookie empieza con &quot;Usuario=&quot;
+            let partes = cookie.split(&quot;=&quot;); 
+            nombreUsuario = partes[1]; 
+            // alert(&quot;Nombre de usuario: &quot; + nombreUsuario);
+            break; // Detiene el bucle al encontrar la cookie
+        }
+    }
+
+    //Colocamos el nombre de Usuario
+    if (nombreUsuario) {
+        document.getElementById(&quot;nombreUsuarioIniciado&quot;).textContent = &quot;Bienvenido, &quot; + nombreUsuario;
+    } else {
+        alert(&quot;No se encontró la cookie 'Usuario'.&quot;);
+    }
+
+}
+
+/**
+ *  Metodo Ace..
+ * 
+ *  Medianre..
+ * 
+ */
+//Acceso a RRSS
+function redesCurioso(){//Podria haberlo hecho con el click pero por probar nuevos eventos
+    let logoRedes=document.querySelector(&quot;#logoCurioso&quot;);
+
+    // Evento que detecte cuando el botón del ratón es liberado (La idea principal era la siguiente)
+    //Que pulsara, saliera un aviso de SUELTAME, y entonces accediera al enlace.
+    logoRedes.addEventListener('mousedown', () =&gt; {
+    });
+    
+    // Evento que detecte cuando el botón del ratón es liberado
+    logoRedes.addEventListener('mouseup', () =&gt; {
+        window.location.href=&quot;https://www.instagram.com/marresinn/&quot;;
+    });
+
+
+
+}
+
+//Funcion con un Boton de cerrar sesion con un evento para hacerlo mas interesante
+function cerrarSesion(){
+    let cerrarSesion=document.getElementById(&quot;botonCerrarSesion&quot;);
+
+    cerrarSesion.addEventListener(&quot;click&quot;,()=&gt;{
+        let mensajeAviso= confirm(&quot;Se van a eliminar todos los productos de la cesta, ¿realmente quiere salir de la pagina?&quot;);
+        if(mensajeAviso===true){
+            window.close();
+        }
+    });
+ 
+}
+
+
+//DESPLEGABLE ABRIR Y CERRAR CESTA 
+function carritoCompra(){
+let divCarrito=document.getElementById(&quot;datosCompra&quot;);
+let iconoCesta=document.querySelector(&quot;#iconoCarrito&quot;);
+
+//Evento aplicado al SVG que uso como cesta
+    iconoCesta.addEventListener(&quot;click&quot;,()=&gt;{
+        //Aparece carrito
+        if(divCarrito.style.right!='0%'){
+            divCarrito.style.right='0%';
+            document.querySelector('.efectoBorroso').style.display=&quot;flex&quot;;//efecto borroso del body 
+        }else{//Aparece carrito
+            divCarrito.style.right='-100%';
+            if(document.querySelector('.ticketCompra').style.display!=&quot;block&quot;){//esto lo hago para que no se quite el fondo borroso si le doy a la compra estando abierto el ticket
+                document.querySelector('.efectoBorroso').style.display=&quot;none&quot;;
+            }
+        }
+
+     });  
+
+}
+
+//Añadir producto con parametros solo cambio el numero del producto que ira del 1 al 8 porque hay 8 productos
+function añadirProductoCarrito(id) {
+    // Si está oculto lo hace aparecer
+    if (document.getElementById(`datos${id}`).style.display != &quot;flex&quot;) {
+        document.getElementById(`datos${id}`).style.display = &quot;flex&quot;;
+        
+        let nombreCarrito = document.getElementById(`nombre${id}`).textContent;
+        document.getElementById(`nombreCarrito${id}`).textContent = nombreCarrito;
+
+        let precioCarrito = document.getElementById(`precio${id}`).textContent;
+        document.getElementById(`precioCarrito${id}`).textContent = precioCarrito;
+        document.getElementById(`cantidad${id}`).textContent = 1;
+        
+        let contadorTotal = parseInt(document.getElementById(&quot;contadorProductos&quot;).textContent);
+        contadorTotal++;
+        document.getElementById(&quot;contadorProductos&quot;).textContent = contadorTotal;
+        
+        alert(nombreCarrito);
+    } else {
+        alert(&quot;El producto ya está en la cesta de la compra&quot;);
+    }
+    subtotalCompra();
+}
+
+//Sumar productos desde la cesta, aumentando contadorProductos final, precio final, precio-cantidadProducto
+function sumarProducto(id){
+    let contadorTotal = parseInt(document.getElementById(&quot;contadorProductos&quot;).textContent);
+    let contadorPX = parseInt(document.getElementById(`cantidad${id}`).textContent);
+    let precioUnidad= parseFloat(document.getElementById(`precio${id}`).textContent);
+    let precioActualizado;
+    contadorPX++;
+    contadorTotal++;
+    precioActualizado=parseFloat(precioUnidad*contadorPX).toFixed(2);;
+    document.getElementById(`precioCarrito${id}`).textContent =+precioActualizado;
+    document.getElementById(`cantidad${id}`).textContent = contadorPX;
+    document.getElementById(&quot;contadorProductos&quot;).textContent = contadorTotal;
+    subtotalCompra();
+
+}
+//Restar productos desde la cesta, aumentando contadorProductos final, precio final, precio-cantidadProducto
+function restarProducto(id){
+    let contadorTotal = parseInt(document.getElementById(&quot;contadorProductos&quot;).textContent);
+    let contadorPX = parseInt(document.getElementById(`cantidad${id}`).textContent);
+    let precioUnidad= parseFloat(document.getElementById(`precio${id}`).textContent);
+    let precioActualizado;
+
+    if(contadorPX==1){
+        document.getElementById(`datos${id}`).style.display=&quot;none&quot;;
+        contadorTotal--;
+        contadorPX=0;
+
+    }else{
+        contadorPX--;
+        contadorTotal--;
+        precioActualizado=parseFloat(precioUnidad*contadorPX).toFixed(2);;
+    }
+
+    document.getElementById(`precioCarrito${id}`).textContent =precioActualizado;
+    document.getElementById(`cantidad${id}`).textContent = contadorPX;
+    document.getElementById(&quot;contadorProductos&quot;).textContent = contadorTotal;
+    subtotalCompra();
+
+}
+
+
+//Calcular el subTotal de la compra 
+function subtotalCompra() {
+    // Obtener todos los &lt;li&gt; dentro de #datosCompra
+    let stockTotal = document.getElementById(&quot;datosCompra&quot;);
+    let productos = stockTotal.getElementsByTagName('li'); // HTMLCollection
+    let numProductos = productos.length;
+    let subtotalCompra = 0;
+
+    // Sacamos los precios de los productos
+    for (let i = 1; i &lt;= numProductos; i++) {
+        let precioElemento = document.getElementById(`precioCarritoP${i}`);
+        if (precioElemento) {
+            // Extraer el valor numérico del precio, asumiendo que el formato es &quot;precio:  €&quot;
+            let precioTexto = precioElemento.textContent;
+            let precioNumerico = parseFloat(precioTexto);
+            if (!isNaN(precioNumerico)) {
+                subtotalCompra += precioNumerico;
+            }
+        }
+    }
+    //Asignamos la suma al resultado final
+    document.getElementById(&quot;subtotalCompra&quot;).textContent =subtotalCompra;
+}
+
+
+
+//Elimnar Producto
+function eliminarProducto(id){
+    if(document.getElementById(`datos${id}`).style.display === &quot;flex&quot;){
+
+        let cantidadEliminar= document.getElementById(`cantidad${id}`).textContent;
+        let precioEliminar=document.getElementById(`precioCarrito${id}`).textContent;
+        let contadorGeneralActualizado=document.getElementById(&quot;contadorProductos&quot;).textContent;
+        // alert(cantidadEliminar);FUNCIONA
+        document.getElementById(`cantidad${id}`).textContent=0;//Ponemos la cantidad a 0
+        document.getElementById(`precioCarrito${id}`).textContent=0;//Ponemos el precio a 0
+
+        //HASTA AQUI FUNCIONA
+        //Ahora vamos a realizar los cambios en el precio total
+        contadorGeneralActualizado-=cantidadEliminar;
+        document.getElementById(&quot;contadorProductos&quot;).textContent=contadorGeneralActualizado;
+        subtotalCompra();
+        document.getElementById(`datos${id}`).style.display =&quot;none&quot;
+        
+
+    }
+    
+}
+
+
+
+function tramitarCompra(){
+
+    alert(&quot;GENERANDO TICKET&quot;);
+    let divCarrito=document.getElementById(&quot;datosCompra&quot;);//clase que contiene los datos del carrito
+    let cerrarTicket=document.getElementById(&quot;cerrarTicket&quot;);
+    let productos = document.querySelectorAll('.datosCompra li');//selecciona los productos del carrito
+    
+    divCarrito.style.right='-100%';//esconde el carrito
+    document.getElementById(&quot;ticketCompra&quot;).style.display=&quot;block&quot;//hace aparecer el ticket
+    document.querySelector('.efectoBorroso').style.display=&quot;flex&quot;;//pone el fondo borroso
+    
+    //Productos a 0
+    //subtotal a 0
+    
+        for(let i=0; i&lt;productos.length;i++){
+    
+            //el +1 es porque nuestros productos no van del 0-7 sino del 1-8
+            let productoTicket=document.getElementById(`nombreCarritoP${i+1}`).textContent;//nombre ProductoX
+            let cantidadProductoTicket=parseInt(document.getElementById(`cantidadP${i+1}`).textContent);//cantidad ProductoX
+            let precioFinalProductoTicket=parseFloat(document.getElementById(`precioCarritoP${i+1}`).textContent);//precioTotal ProductoX
+    
+            if(window.getComputedStyle(productos[i]).display != 'none'){//si el producto esta none es porque no esta incluido en el carrito
+                //si no esta none, hacemos un innerHTML del producto donde metemos: nombre,cantidad, precio.
+                //Creamos producto
+                let productoHTML = `&lt;li&gt; 
+                                        &lt;span&gt;${productoTicket}:&lt;/span&gt;
+                                        &lt;span&gt;${cantidadProductoTicket}&lt;/span&gt; 
+                                        &lt;span&gt;${precioFinalProductoTicket} €&lt;/span&gt;
+                                    &lt;/li&gt;`;
+    
+                //Introducimos producto
+                document.getElementById(&quot;productosTicket&quot;).innerHTML +=productoHTML;
+            }
+    
+    
+    
+        }
+    
+    totalCompra=document.getElementById(&quot;subtotalCompra&quot;).textContent;//Cogemos el valor de subTotal de la compra para llevarlo al ticket
+    document.getElementById(&quot;totalCompra&quot;).textContent=totalCompra;
+    
+    //Trabajaremos con el Obj Date para obtener la fecha de compra 
+    let fechaCompra=new Date();
+    let dia=fechaCompra.getDate();
+    let mes=fechaCompra.getMonth()+1;
+    let anio=fechaCompra.getFullYear();
+    fechaCompra=dia+&quot;/&quot;+mes+&quot;/&quot;+anio;
+    
+    //mandamos la fecha de compra al p que tenemos en el html
+    document.getElementById(&quot;fechaCompra&quot;).textContent=&quot;Compra realizada: &quot;+fechaCompra;
+    
+    
+    //Eliminamos productos de la compra una vez generamos el ticket
+    //Como ya hemos &quot;Realizado&quot; la compra, dejaremos el carrito VACIO
+    //Eliminaremos: todos los productos,contador total,precio total,cantidades, preciosde cada productoXcantidad
+    
+    //eliminar productos, sus precios y sus cantidades
+        for (let i = 1; i &lt;=productos.length; i++) {
+            productos[i-1].style.display = 'none';//todos los li a none (productos)
+            document.getElementById(`precioCarritoP${i}`).textContent=0;//seteamos todos los precios de los productos a 0  
+            document.getElementById(`cantidadP${i}`).textContent=0;//seteamos las cantidades de los productos a 0 
+        }
+    document.getElementById(&quot;contadorProductos&quot;).textContent=0;//contadorTotal a 0
+    document.getElementById(&quot;subtotalCompra&quot;).textContent=0;//subtotal a 0
+    
+        //evento para cerrar ticket
+        cerrarTicket.addEventListener(&quot;click&quot; ,()=&gt;{
+            alert(&quot;Cerrando el ticket&quot;);
+            document.getElementById(&quot;productosTicket&quot;).innerHTML=&quot;&quot;;//con esto resuelvo error de dejar el ticket guardado
+            document.getElementById(&quot;ticketCompra&quot;).style.display=&quot;none&quot;
+            document.querySelector('.efectoBorroso').style.display=&quot;none&quot;;
+        });
+    
+    }
+</div></section><div class="last-modified">Last modified: 31 enero 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="css.html" class="navigation-links__prev">🎨 CSS</a><a href="uso.html" class="navigation-links__next">📖 Gu&iacute;a de uso - Tienda online</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

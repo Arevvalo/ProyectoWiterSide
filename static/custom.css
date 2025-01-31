@@ -1,0 +1,158 @@
+/* Estilos Generales */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1d1d1f;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    border-left: 5px solid #0071e3;
+    padding-left: 15px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #555;
+}
+
+/* Párrafos */
+p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Enlaces */
+a {
+    color: #0071e3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #005bb5;
+}
+
+/* Bloques de Código */
+pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: #ff453a;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #0071e3;
+    color: #fff;
+}
+
+/* Botones */
+.button {
+    display: inline-block;
+    background: #0071e3;
+    color: #fff;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    font-weight: 500;
+}
+
+.button:hover {
+    background: #005bb5;
+}
+
+/* Caja de Información */
+.info-box {
+    background: #f5f5f7;
+    padding: 15px;
+    border-left: 5px solid #0071e3;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    background: #1d1d1f;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    color: #fff;
+    display: block;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background: #333;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background: #1d1d1f;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}

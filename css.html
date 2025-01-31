@@ -1,0 +1,646 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-01-31T21:49:53.4472924"><title>🎨 CSS | ProyectoWriterSide</title><script type="application/json" id="virtual-toc-data">[{"id":"index-css","level":0,"title":"index.css","anchor":"#index-css"},{"id":"registro-css","level":0,"title":"registro.css","anchor":"#registro-css"},{"id":"tiendaprincipal-css","level":0,"title":"tiendaPrincipal.css","anchor":"#tiendaprincipal-css"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><link href="static/custom.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="🎨 CSS | ProyectoWriterSide"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="ProyectoWriterSide Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/css.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="🎨 CSS | ProyectoWriterSide"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/css.html#webpage",
+    "url": "writerside-documentation/css.html",
+    "name": "🎨 CSS | ProyectoWriterSide",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "ProyectoWriterSide Help"
+}</script><!-- End Schema.org --></head><body data-id="CSS" data-main-title="🎨 CSS" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="estructura.md|🏗️ Estructura del Proyecto"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>ProyectoWriterSide  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="CSS" id="CSS.md">🎨 CSS</h1><section class="chapter"><h2 id="index-css" data-toc="index-css">index.css</h2><div class="code-block" data-lang="css">
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../IMAGENES/fondoMarron.jpg);
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-position: center center;
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contenedorPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    width: 100%;
+    gap: 10%;
+}
+
+
+.contenedorTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    overflow: hidden;
+
+    max-width: 600px;
+    max-height: 600px;
+    width: 100%;
+
+}
+
+.contenedorTitulo img{
+    border-radius: 50%;
+    width: 80%;
+    height: 80%; 
+}
+
+.contenedorTitulo p{ 
+font-size: 100px;
+font-family:Georgia, 'Times New Roman', Times, serif;
+color: black;
+border-radius: 10px;
+background-color: #ffffff7e;
+padding: 30px;
+
+}
+
+
+.contenedorLogin {
+    background-color: #9e8072ce;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    min-height: 400px;
+    width: 100%;
+}
+
+
+.contenedorLogin h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.8em;
+}
+
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formLogin label {
+    text-align: left;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.formLogin input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.formLogin input:focus {
+    outline: none;
+    border-color: #6A3F36;
+    box-shadow: 0 0 5px #6A3F36;
+}
+
+
+.formLogin button {
+    padding: 10px;
+    background-color: #6A3F36;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.formLogin button:hover {
+    background-color: #55322b;
+}
+
+/* Enlace de registro */
+.abrirRegistro {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+.abrirRegistro a {
+    color: #55322b;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.abrirRegistro a:hover {
+    text-decoration: underline;
+    font-size: 15px;
+
+}
+</div></section><section class="chapter"><h2 id="registro-css" data-toc="registro-css">registro.css</h2><div class="code-block" data-lang="css">
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../IMAGENES/fondoMarron.jpg);
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-position: center center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.contenedorRegister {
+    background-color: #9e8072ce;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+
+.contenedorRegister h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.8em;
+}
+
+
+.formRegister {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formRegister label {
+    text-align: left;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.formRegister input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.formRegister input:focus {
+    outline: none;
+    border-color: #6A3F36;
+    box-shadow: 0 0 5px #6A3F36;
+}
+
+.formRegister button {
+    padding: 10px;
+    background-color: #6A3F36;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.formRegister button:hover {
+    background-color: #55322b;
+}
+
+/* Enlace para iniciar sesión */
+.abrirLogin {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+.abrirLogin a {
+    color: #55322b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.abrirLogin a:hover {
+    text-decoration: underline;
+    font-size: 15px;
+
+}
+</div></section><section class="chapter"><h2 id="tiendaprincipal-css" data-toc="tiendaprincipal-css">tiendaPrincipal.css</h2><div class="code-block" data-lang="css">
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;   
+    background-color: #C09C82;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+.efectoBorroso {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-top: 130px;
+        height: 100%;
+        backdrop-filter: blur(1px); 
+        background: #8068579e;
+        z-index: 9998;
+        transition: display 0.8s ease;
+    }
+    
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #8068579e; 
+    
+}
+
+.cabecera .izquierda span {
+    font-size: 25px;
+    cursor:default;
+}
+.cabecera .centro{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+
+}
+.cabecera .centro .logo {
+    font-size: 40px;
+    font-weight: bold;
+    font-family:Times; 
+    letter-spacing: 5px;
+    cursor:default;
+}
+.cabecera .centro .logoImg {
+    width:50px;
+}
+
+
+.cabecera .derecha {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   position: relative;
+}
+
+.cabecera .derecha .iconoCarrito {
+    width: 40px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+
+.botonCerrarSesion {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    color: #584942;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botonCerrarSesion:hover {
+    background-color: #584942;
+    color: #ffffff;
+
+}
+
+.contadorProductos{
+    position: absolute;
+    background-color: #584942;
+    color: white;
+    top: 82%;
+    right: 32%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}
+
+
+
+
+.datosCompra {
+    margin-top: 3px;
+    position: fixed;
+
+    right:-100%;
+    width: 30%; 
+    height: 100%; 
+    background-color: #987B67; 
+    box-shadow: -20px 0 10px rgba(0, 0, 0, 0.2); 
+    transition: right 0.3s ease-in-out; 
+    z-index: 9999; 
+    padding: 20px;
+    box-sizing: border-box; 
+    overflow-y: auto; 
+    
+    transition: right 0.8s ease;
+}
+
+
+
+
+.datosCompra h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.listaProductos {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+
+.datosCompra ul li {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;    
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    height: 60px; 
+}
+
+.nombreCarrito {
+    flex: 2;
+    min-width: 100px; 
+}
+
+.cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    text-align: center;
+}
+
+.btnCantidad {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btnCantidad button {
+    background-color: #584942;
+    color: white;
+    font-size: 20px;
+    border: none;
+    width: 30px;
+    height: 30px; 
+}
+
+.btnCantidad button:hover {
+    background-color: white;
+    color: #584942;
+    border: none;
+}
+
+.bloquePrecio {
+    flex: 1;
+    text-align: center;
+    min-width: 80px; 
+}
+
+.eliminarProducto {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    stroke: #ff0000; 
+    min-width: 24px; 
+}
+
+.footerMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+
+}
+
+.footerMenu .subtotalCompra{
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.footerMenu .botonesInteraccionCarrito{
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    justify-content: center;
+    
+    
+}
+
+.footerMenu .botonesInteraccionCarrito button{
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    color: #584942;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.footerMenu .botonesInteraccionCarrito button:hover{
+    color: white;
+    background-color: #584942;
+    border: none;
+}
+
+
+
+
+img{
+max-width: 100%;
+
+}
+
+.contenedorProductos{
+    padding: 10px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.producto{
+    background-color: #987B67;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.producto:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.producto img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.producto:hover img{
+    transform: scale(1.2);
+}
+
+.producto figure{
+    overflow: hidden;
+}
+
+.contenedorProductos .producto .infoProducto{
+    padding: 5px 30px;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    height: 390px;
+    gap: 10px;
+}
+
+.cajaBotonesProducto{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+.precioProducto{
+    font-size: 18px;
+    font-weight: 900;
+}
+.añadirCarrito{
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    color: #584942;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.añadirCarrito:hover {
+    background-color: #584942;
+    color: #ffffff;
+}
+
+
+
+.ticketCompra {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.941);
+    width: 300px;
+    padding: 20px;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 9999;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333; 
+}
+
+.ticketCompra h2 {
+    text-align: center;
+    border-bottom: 2px dashed #333;
+    padding-bottom: 10px;
+    margin: 0;
+    color: #333;
+}
+
+.productosTicket {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.productosTicket li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #333;
+    color: #333;
+}
+
+.ticketCompra p {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.cerrarTicket {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: #987B67;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cerrarTicket:hover {
+    background: #987B67;
+    color: white;
+
+}
+
+</div></section><div class="last-modified">Last modified: 31 enero 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="html.html" class="navigation-links__prev">📂 HTML</a><a href="js.html" class="navigation-links__next">⚙️ JavaScript</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
